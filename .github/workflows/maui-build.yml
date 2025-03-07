@@ -1,7 +1,6 @@
-# Jeff B.
+# Jeff B
 
 name: MAUI Build
-
 
 on:
   push:
@@ -76,9 +75,6 @@ jobs:
       - name: Check Xcode version
         run: xcodebuild -version
 
-      - name: Restore workloads
-        run: dotnet workload restore
-
       - name: Restore dependencies
         run: dotnet restore
 
@@ -103,9 +99,6 @@ jobs:
 
       - name: Check Xcode version
         run: xcodebuild -version
-
-      - name: Restore workloads
-        run: dotnet workload restore
 
       - name: Restore dependencies
         run: dotnet restore
