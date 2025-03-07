@@ -65,6 +65,9 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
+      - name: Install maui-ios workload
+        run: dotnet workload install maui-ios
+
       - name: Restore dependencies
         run: dotnet restore
 
@@ -81,6 +84,9 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
+
+      - name: Install maui-maccatalyst workload
+        run: dotnet workload install maui-maccatalyst
 
       - name: Restore dependencies
         run: dotnet restore
