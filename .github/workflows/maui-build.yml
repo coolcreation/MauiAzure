@@ -1,3 +1,5 @@
+# Jeff
+
 name: MAUI Build
 
 on:
@@ -72,7 +74,7 @@ jobs:
         run: dotnet workload install maui-ios
 
       - name: Install iOS SDK pack
-        run: dotnet workload install microsoft-ios-sdk-net8.0
+        run: dotnet workload install microsoft-ios-sdk
 
       - name: Restore dependencies
         run: dotnet restore
@@ -98,7 +100,7 @@ jobs:
         run: dotnet workload install maui-maccatalyst
 
       - name: Install MacCatalyst SDK pack
-        run: dotnet workload install microsoft-maccatalyst-sdk-net8.0
+        run: dotnet workload install microsoft-maccatalyst-sdk
 
       - name: Restore dependencies
         run: dotnet restore
