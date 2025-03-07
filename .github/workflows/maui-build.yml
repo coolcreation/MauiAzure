@@ -1,4 +1,4 @@
-# Jeff
+# Jeff B
 
 name: MAUI Build
 
@@ -70,11 +70,8 @@ jobs:
       - name: Check Xcode version
         run: xcodebuild -version
 
-      - name: Install maui-ios workload
-        run: dotnet workload install maui-ios
-
-      - name: Install iOS SDK pack
-        run: dotnet workload install microsoft-ios-sdk
+      - name: Restore workloads
+        run: dotnet workload restore
 
       - name: Restore dependencies
         run: dotnet restore
@@ -96,11 +93,8 @@ jobs:
       - name: Check Xcode version
         run: xcodebuild -version
 
-      - name: Install maui-maccatalyst workload
-        run: dotnet workload install maui-maccatalyst
-
-      - name: Install MacCatalyst SDK pack
-        run: dotnet workload install microsoft-maccatalyst-sdk
+      - name: Restore workloads
+        run: dotnet workload restore
 
       - name: Restore dependencies
         run: dotnet restore
