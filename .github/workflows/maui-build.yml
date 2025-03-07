@@ -1,6 +1,7 @@
-# Jeff B
+# Jeff B.
 
 name: MAUI Build
+
 
 on:
   push:
@@ -57,38 +58,43 @@ jobs:
         run: dotnet build --configuration Release -f net8.0-windows10.0.19041.0
 
   ios-build:
-   runs-on: macos-latest
+    runs-on: macos-latest
 
-   steps:
-     - uses: actions/checkout@v4
+    steps:
+      - uses: actions/checkout@v4
 
-     - name: Select Xcode
-       uses: maxim-mazurok/setup-xcode@v1
-       with:
-        xcode-version: '16.0' # Or a later version
+      - name: Select Xcode
+        uses: maxim-mazurok/setup-xcode@v1
+        with:
+          xcode-version: '16.0' # Or a later version
 
-     - name: Setup .NET
-       uses: actions/setup-dotnet@v4
-       with:
-        dotnet-version: '8.0.x'
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
 
-     - name: Check Xcode version
-       run: xcodebuild -version
+      - name: Check Xcode version
+        run: xcodebuild -version
 
-     - name: Restore workloads
-       run: dotnet workload restore
+      - name: Restore workloads
+        run: dotnet workload restore
 
-     - name: Restore dependencies
-       run: dotnet restore
+      - name: Restore dependencies
+        run: dotnet restore
 
-     - name: Build iOS
-       run: dotnet build --configuration Release -f net8.0-ios
+      - name: Build iOS
+        run: dotnet build --configuration Release -f net8.0-ios
 
   maccatalyst-build:
     runs-on: macos-latest
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        uses: maxim-mazurok/setup-xcode@v1
+        with:
+          xcode-version: '16.0' # Or a later version
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
